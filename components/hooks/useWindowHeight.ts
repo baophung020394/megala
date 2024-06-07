@@ -1,21 +1,24 @@
-"use client";
-
 import { useState, useEffect } from "react";
 
 const useWindowHeight = () => {
-  const [windowHeight, setWindowHeight] = useState<number>(window.innerHeight);
+  const [windowHeight, setWindowHeight] = useState<number>(0);
 
   useEffect(() => {
-    const handleResize = () => {
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setWindowHeight(window.innerHeight);
+      };
+
+      // Set initial height
       setWindowHeight(window.innerHeight);
-    };
 
-    window.addEventListener("resize", handleResize);
+      window.addEventListener("resize", handleResize);
 
-    // Cleanup event listener on unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+      // Cleanup event listener on unmount
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, []);
 
   return windowHeight;
