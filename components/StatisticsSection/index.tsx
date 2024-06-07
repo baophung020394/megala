@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import { Box, Container, Grid, GridItem, Text, VStack } from "@chakra-ui/react";
+import { Box, Container, Grid, Text, VStack } from "@chakra-ui/react";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const MotionGridItem = motion(GridItem);
+const MotionGridItem = motion(Box);
 
 function StatisticsSection() {
   const { ref, inView } = useInView({
@@ -38,7 +38,7 @@ function StatisticsSection() {
         maxW="1920px"
         position="relative"
         zIndex="2"
-        padding="10rem 0 10.5rem"
+        padding="10rem 4rem 10.5rem"
       >
         <Grid
           templateColumns={{
@@ -62,6 +62,10 @@ function StatisticsSection() {
             flexDirection="column"
             justifyContent="center"
             alignItems="center"
+            mb={{
+              base: "4rem",
+              lg: 0,
+            }}
           >
             <Text
               fontSize="3.1rem"
@@ -84,6 +88,10 @@ function StatisticsSection() {
             flexDirection="column"
             justifyContent="center"
             alignItems="center"
+            mb={{
+              base: "4rem",
+              lg: 0,
+            }}
           >
             <Text
               fontSize="7.6rem"
@@ -120,6 +128,10 @@ function StatisticsSection() {
             flexDirection="column"
             justifyContent="center"
             alignItems="center"
+            mb={{
+              base: "4rem",
+              lg: 0,
+            }}
           >
             <Text
               fontSize="7.6rem"
@@ -150,6 +162,10 @@ function StatisticsSection() {
             flexDirection="column"
             justifyContent="center"
             alignItems="center"
+            mb={{
+              base: "4rem",
+              lg: 0,
+            }}
           >
             <Text
               fontSize="7.6rem"
